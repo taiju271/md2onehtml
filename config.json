@@ -1,0 +1,45 @@
+{
+  "lang": "ja",
+  "bootstrap": true,
+  "font-awesome": false,
+  "mermaid": false,
+  "dateFormat": "%Y/%m/%d %H:%M:%S",
+  "dest": "path_to_copy_directory",
+  "pandoc": {
+    "from": "markdown+smart+hard_line_breaks+header_attributes+autolink_bare_uris",
+    "args": [
+      "--highlight-style=haddock",
+      "--self-contained",
+      "--wrap=none",
+      "--katex",
+      "--toc",
+      "--section-divs"
+    ]
+  },
+  "htmlmin": {
+    "removeComments": true,
+    "removeCommentsFromCDATA": true,
+    "removeCDATASectionsFromCDATA": true,
+    "collapseWhitespace": true,
+    "conservativeCollapse": false,
+    "collapseInlineTagWhitespace": false,
+    "preserveLineBreaks": false,
+    "collapseBooleanAttributes": true,
+    "removeTagWhitespace": false,
+    "removeAttributeQuotes": true,
+    "removeRedundantAttributes": true,
+    "useShortDoctype": true,
+    "removeEmptyAttributes": true,
+    "removeScriptTypeAttributes": true,
+    "removeStyleLinkTypeAttributes": true,
+    "removeOptionalTags": true,
+    "removeEmptyElements": false,
+    "lint": false,
+    "keepClosingSlash": false,
+    "caseSensitive": false,
+    "minifyJS": false,
+    "minifyCSS": true,
+    "minifyURLs": false,
+    "ignoreCustomComments": ["/^\\s+LICENSE/"]
+  }
+}

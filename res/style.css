@@ -1,0 +1,75 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+li:target,
+*:target > h1,
+*:target > h2,
+*:target > h3,
+*:target > h4,
+*:target > h5,
+*:target > h6 {
+  background-color: #ffb !important;
+}
+
+h1 a.back-toc,
+h2 a.back-toc,
+h3 a.back-toc,
+h4 a.back-toc,
+h5 a.back-toc,
+h6 a.back-toc {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  font-size: 14px;
+  padding: 0 0.4em;
+  text-decoration: none;
+}
+
+footer .authors .author:after {
+  content: ', ';
+}
+
+footer .authors .author:last-child:after {
+  content: none;
+}
+
+figure,
+video {
+  cursor: pointer;
+}
+
+figure.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+figure.fullscreen > img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  width: auto;
+  max-height: 100% !important;
+  max-width: 100%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  background: white;
+}

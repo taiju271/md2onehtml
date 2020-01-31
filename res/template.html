@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+<meta charset="utf-8">
+$if(thirdparty)$
+<!--
+LICENSES
+================================================================================
+$if(mermaid)$
+mermaid:
+https://github.com/mermaid-js/mermaid
+
+###MERMAID_LICENSE###
+================================================================================
+$endif$
+$if(fontawesome)$
+Font Awesome:
+https://fontawesome.com
+
+###FONTAWESOME_LICENSE###
+================================================================================
+$endif$
+$if(bootstrap)$
+Bootstrap:
+https://getbootstrap.com/
+
+###BOOTSTRAP_LICENSE###
+================================================================================
+$endif$
+-->
+$endif$
+<title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+<link rel="icon" type="image/vnd.microsoft.icon" href="$rootdir$/res/favicon.ico">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+$if(quotes)$
+      q { quotes: "“" "”" "‘" "’"; }
+$endif$
+  </style>
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+
+$if(mermaid)$
+<!-- inject-js  src="$rootdir$/node_modules/mermaid/dist/mermaid.min.js" -->
+$endif$
+$if(fontawesome)$
+<link rel="stylesheet" href="$rootdir$/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+$endif$
+$if(bootstrap)$
+<!-- inject-css-inline src="$rootdir$/node_modules/bootstrap/dist/css/bootstrap.min.css" -->
+$endif$
+<!-- inject-css-inline src="$rootdir$/tmp/style-inline.min.css" -->
+<!-- inject-css        src="$rootdir$/tmp/style.min.css" -->
+<!-- inject-js         src="$rootdir$/tmp/script.min.js" -->
+<!-- inject-link       href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Inconsolata:400,700&display=swap" -->
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(title)$
+<header class="page-header">
+<div class="container">
+<h1 class="title">$title$</h1>
+$if(subtitle)$
+<p class="subtitle">$subtitle$</p>
+$endif$
+</div>
+</header>
+$endif$
+<div id="body" class="container">
+$if(abstract)$
+<p class="abstract">$abstract$</p>
+$endif$
+$if(toc)$
+<nav id="$idprefix$TOC">
+<h5>$text_toc$</h5>
+$toc$
+</nav>
+$endif$
+$body$
+</div>
+<footer>
+<div class="container">
+<a class="back-toc" href="#">↑</a>
+$if(author)$
+<p class="authors">
+<span>$text_author$:</span>
+$for(author)$
+<span class="author">$author$</span>
+$endfor$
+</p>
+$endif$
+$if(date)$
+<p class="created">
+<span>$text_created$:</span>
+<span class="timestamp">$date$</span>
+</p>
+$endif$
+<p class="pandoc">
+<span>Powered by:</span>
+<a href="http://pandoc.org/">Pandoc</a>
+<span>$version$</span>
+</p>
+<br style="clear:both">
+</div>
+</footer>
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>
